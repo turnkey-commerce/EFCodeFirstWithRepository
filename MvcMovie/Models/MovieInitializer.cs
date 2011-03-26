@@ -9,7 +9,7 @@ namespace MvcMovie.Models {
     using System.Data.Entity;
 
     namespace MvcMovie.Models {
-        public class MovieInitializer : DropCreateDatabaseIfModelChanges<MovieContext> {
+        public class MovieInitializer :   DropCreateDatabaseIfModelChanges<MovieContext> {
             protected override void Seed(MovieContext context) {
 
                 var actors = new List<Actor>{

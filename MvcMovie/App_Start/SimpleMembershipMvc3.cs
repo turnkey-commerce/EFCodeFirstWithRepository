@@ -20,7 +20,7 @@ namespace MvcMovie.App_Start
 		public static void Initialize()
 		{
 			// Modify the settings below as appropriate for your application
-            WebSecurity.InitializeDatabaseConnection(connectionStringName: "MovieContext", userTableName: "Users", userIdColumn: "ID", userNameColumn: "Username", autoCreateTables: false);
+            WebSecurity.InitializeDatabaseConnection(connectionStringName: "MovieContext", userTableName: "Users", userIdColumn: "ID", userNameColumn: "Username", autoCreateTables: true);
 			
 			// Comment the line above and uncomment these lines to use the IWebSecurityService abstraction
 			//var webSecurityService = DependencyResolver.Current.GetService<IWebSecurityService>();
