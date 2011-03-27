@@ -25,5 +25,13 @@ namespace MvcMovie.Models {
         public string Rating { get; set; }
 
         public virtual ICollection<Actor> Actors { get; set; }
+
+        public override int GetHashCode() {
+            return ID;
+        }
+
+        public override bool Equals(object obj) {
+            return ID == (obj as Movie).ID;
+        }
     }
 }

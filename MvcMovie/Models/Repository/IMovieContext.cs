@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace MvcMovie.Models.Repository {
     public interface IMovieContext {
-        DbSet<Movie> Movies { get; set; }
+        IDbSet<Movie> Movies { get; set; }
         int SaveChanges();
     }
 }
