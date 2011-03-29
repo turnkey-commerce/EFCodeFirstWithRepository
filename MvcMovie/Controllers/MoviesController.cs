@@ -12,10 +12,12 @@ namespace MvcMovie.Controllers
     public class MoviesController : Controller
     {
         private IMovieRepository _repository;
+        private IActorRepository _actorRepository;
 
-        public MoviesController(IMovieRepository repository)
+        public MoviesController(IMovieRepository repository, IActorRepository actorRepository)
         {
             _repository = repository;
+            _actorRepository = actorRepository;
         }
 
         //
@@ -34,6 +36,10 @@ namespace MvcMovie.Controllers
         [HttpPost]
         public ActionResult Create(Movie newMovie) {
             if (ModelState.IsValid) {
+                // TODO: Implement view model to add the actors. The following was tested to work OK:
+                //Actor actor = _actorRepository.FindById(1);
+                //newMovie.Actors = new List<Actor>();
+                //newMovie.Actors.Add(actor);
                 _repository.Save(newMovie);
                 return RedirectToAction("Index");
             } else {

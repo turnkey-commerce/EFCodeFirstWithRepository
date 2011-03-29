@@ -7,6 +7,7 @@ using System.Data.Entity;
 namespace MvcMovieTest.Fakes {
     class FakeMovieContext : DbContext, IMovieContext {
         private IDbSet<Movie> _movies;
+        private IDbSet<Actor> _actors;
 
         public IDbSet<Movie> Movies {
             get {
@@ -17,6 +18,16 @@ namespace MvcMovieTest.Fakes {
             set {
             }
         
+        }
+
+        public IDbSet<Actor> Actors {
+            get {
+                throw new NotImplementedException();
+            }
+
+            set {
+            }
+
         }
 
         private void CreateMovies() {

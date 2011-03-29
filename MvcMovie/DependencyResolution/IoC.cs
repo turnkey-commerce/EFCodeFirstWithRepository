@@ -13,6 +13,7 @@ namespace MvcMovie {
                                     });
                             x.For<IMovieContext>().HttpContextScoped().Use<MovieContext>();
                             x.For<IMovieRepository>().HttpContextScoped().Use<MovieRepository>();
+                            x.For<IActorRepository>().HttpContextScoped().Use<ActorRepository>();
                         });
             return ObjectFactory.Container;
         }
